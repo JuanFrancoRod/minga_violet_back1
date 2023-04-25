@@ -1,7 +1,7 @@
 //endpoints autores
 // los export al enrutador principal
 import { Router } from "express";
-import read from '../controllers/categories/read.js'
+import read from '../controllers/categories/read.js';
 let router = Router();
 
 /* router.post("/", (req, res, next) => res.status(200).send("autor creado")),*/
