@@ -1,25 +1,19 @@
-//var createError = require('http-errors');
 import "dotenv/config.js";
 import createError from 'http-errors'
-//var express = require('express');
 import express from 'express'
-//var path = require('path');
 import path from 'path';
-//var cookieParser = require('cookie-parser');
 import cookieParser from 'cookie-parser';
-//var logger = require('morgan');
 import logger from 'morgan'
-
-//var indexRouter = require('./routes/index');
 import indexRouter from './routes/index.js'
-
+import cors from 'cors'
 import {__dirname} from './utils.js';
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+//middlewares
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
